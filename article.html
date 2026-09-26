@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article | The Daily Chronicle</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #f4f1eb;
+            font-family: 'Times New Roman', Times, Georgia, serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .article-page {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 4px;
+        }
+        .back-link {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8b0000;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .back-link:hover { text-decoration: underline; }
+        .article-page h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+        .meta {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6b6b6b;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 0;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .meta .author { font-weight: bold; color: #333; }
+        .image-placeholder {
+            background: linear-gradient(145deg, #e8e3db, #d6d0c6);
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 0.9rem;
+            color: #5e5e5e;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 1px solid #bbb;
+            margin-bottom: 25px;
+        }
+        .image-placeholder i { font-size: 3rem; margin-right: 10px; color: #8b0000; opacity: 0.6; }
+        .article-page p {
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            text-align: justify;
+        }
+        .article-page p:first-of-type::first-letter {
+            font-size: 3.5rem;
+            float: left;
+            line-height: 0.9;
+            padding-right: 8px;
+            font-weight: bold;
+            color: #8b0000;
+        }
+        blockquote {
+            border-left: 4px solid #8b0000;
+            padding-left: 20px;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: #444;
+        }
+        .not-found {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .not-found i { font-size: 4rem; color: #8b0000; margin-bottom: 20px; }
+        .not-found h1 { font-size: 2rem; margin-bottom: 15px; }
+        .not-found a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #8b0000;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        .not-found a:hover { text-decoration: underline; }
+        .footer-note {
+            margin-top: 40px;
+            border-top: 2px solid #333;
+            padding-top: 15px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .article-page { padding: 25px; }
+            .article-page h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="article-page" id="articleContainer">
+        <!-- JavaScript fills this in -->
+    </div>
+
+    <script>
+        // =============================================
+        // 📰 ALL YOUR ARTICLES LIVE HERE
+        // To add a new article: copy one block and give it a new unique id
+        // =============================================
+        const articles = {
+            climate: {
+                title: "Global Summit Reaches Historic Climate Accord",
+                author: "By Eleanor Vance",
+                date: "October 23, 2025 · 2 min read",
+                image: "fas fa-globe-americas",
+                imageCaption: "World Leaders Assembly",
+                body: `
+                    <p>In a dramatic turn of events, delegates from 195 nations have agreed to a binding framework to phase out fossil fuel subsidies by 2035. The agreement, reached after two weeks of tense negotiations, includes a $100 billion annual fund to help developing nations transition to renewable energy.</p>
+                    <p>"This is not a moment for applause, but for action," said the UN Secretary-General, urging immediate implementation. The accord also sets a global carbon price floor and mandates annual transparency reports.</p>
+                    <blockquote>"We have finally put words into action. The real work begins today." — UN Secretary-General</blockquote>
+                    <p>Critics argue that without enforcement mechanisms, the agreement may fall short. However, supporters point to the unprecedented inclusion of verifiable targets and a peer-review process that will hold nations accountable.</p>
+                    <p>Markets responded positively, with renewable energy stocks climbing sharply in early trading.</p>
+                `
+            },
+            tech: {
+                title: "Tech Giants Face Landmark Antitrust Ruling",
+                author: "By Marcus Chen",
+                date: "October 23, 2025 · 4 min read",
+                image: "fas fa-gavel",
+                imageCaption: "Federal Courthouse",
+                body: `
+                    <p>A federal judge ruled yesterday that three major technology companies violated antitrust laws by stifling competition in digital advertising and app distribution.</p>
+                    <p>The decision could reshape the industry, potentially forcing divestitures and opening platforms to rivals. Shares of all three companies dropped sharply in after-hours trading.</p>
+                    <blockquote>"This is a wake-up call for Big Tech." — Legal analyst</blockquote>
+                    <p>Appeals are expected to take years, but the ruling already sends a strong signal to regulators worldwide.</p>
+                `
+            },
+            space: {
+                title: "Exclusive: Inside the New Space Race",
+                author: "By Staff Reporter",
+                date: "October 23, 2025 · 6 min read",
+                image: "fas fa-rocket",
+                imageCaption: "Rocket Launch Pad",
+                body: `
+                    <p>Private companies are now launching more rockets than entire nations. We speak to the engineers behind the next lunar mission.</p>
+                    <p>The shift has dramatically cut launch costs and opened space to new industries, from tourism to asteroid mining.</p>
+                    <p>"We're in a new era," said one mission director. "The Moon is just the beginning."</p>
+                `
+            },
+            senate: {
+                title: "Senate Passes Bipartisan Infrastructure Bill",
+                author: "By Janet Rivera",
+                date: "October 23, 2025 · 3 min read",
+                image: "fas fa-landmark",
+                imageCaption: "U.S. Capitol",
+                body: `
+                    <p>The $1.2 trillion package includes funding for roads, bridges, broadband, and clean water. It now heads to the House, where a tough fight is expected.</p>
+                    <p>Both parties claimed victory, with senators citing job creation and long-overdue repairs to aging infrastructure.</p>
+                `
+            },
+            markets: {
+                title: "infilation up !",
+                author: "By David K. Lee",
+                date: "October 23, 2026 · 2 min read",
+                image: "fas fa-chart-line",
+                imageCaption: "Stock Exchange Floor",
+                body: `
+                    <p>Inflation measures the sustained, broad-based rise in the overall price level of goods and services over time. As prices rise, a single unit of currency buys fewer goods, eroding consumer purchasing power.  
+​Key Drivers of Inflation
+​Economists generally group the causes of inflation into three core categories:
+​Demand-Pull Inflation: Occurs when total demand for goods and services in an economy outpaces total supply. Excessive consumer spending, massive government stimulus, or rapid wage growth can drive this mismatch.
+​Cost-Push Inflation: Driven by decreases in total supply resulting from higher production costs. Disruptions in global supply chains, surges in raw material costs (e.g., crude oil, agricultural commodities), or labor shortages force businesses to pass expenses to consumers.
+​Built-In (Wage-Price Spiral) Inflation: Occurs when workers demand higher wages to keep up with rising living costs, leading businesses to raise product prices to cover higher labor costs—creating a self-reinforcing cycle..</p>
+                    <p>Investors welcomed the news, though some analysts warned that strong data could prompt the Fed to raise rates again.</p>
+                `
+            },
+            fed: {
+                title: "Central Bank Holds Interest Rates Steady",
+                author: "By Priya Nair",
+                date: "October 22, 2025 · 3 min read",
+                image: "fas fa-university",
+                imageCaption: "Federal Reserve Building",
+                body: `
+                    <p>Citing cooling inflation, the Federal Reserve opted to keep rates unchanged, but signaled one more hike may come before year-end.</p>
+                    <p>The decision was widely expected, and markets showed little reaction.</p>
+                `
+            },
+            workweek: {
+                title: "The Case for a Four-Day Workweek",
+                author: "By Amelia Grant",
+                date: "October 22, 2025 · Opinion",
+                image: "fas fa-balance-scale",
+                imageCaption: "Opinion Column",
+                body: `
+                    <p>Productivity is not about hours. It's about focus and well-being.</p>
+                    <p>Studies from around the world show that shorter weeks often lead to happier, more effective teams — without any loss in output.</p>
+                    <p>It's time we stopped measuring work by the clock and started measuring it by results.</p>
+                `
+            },
+            water: {
+                title: "Our Water Crisis Demands Action",
+                author: "By Robert Chen",
+                date: "October 22, 2025 · Opinion",
+                image: "fas fa-leaf",
+                imageCaption: "Opinion Column",
+                body: `
+                    <p>Droughts are worsening. We need a national water strategy now.</p>
+                    <p>From the Colorado River to small towns in the Midwest, communities are facing shortages that will only get worse without bold leadership.</p>
+                `
+            },
+            egypt: {
+                title: "Archaeologists Unearth Ancient City in Egypt",
+                author: "By Leila Hassan",
+                date: "October 23, 2025 · 5 min read",
+                image: "fas fa-landmark",
+                imageCaption: "Ancient Ruins near Luxor",
+                body: `
+                    <p>A 3,000-year-old city, dubbed the "Lost City of the Sun," was found near Luxor, complete with temples and artifacts.</p>
+                    <p>Egyptologists are calling it the most significant discovery since Tutankhamun's tomb.</p>
+                `
+            },
+            film: {
+                title: "Film Festival Opens with Record Submissions",
+                author: "By Sofia Mendez",
+                date: "October 23, 2025 · 3 min read",
+                image: "fas fa-film",
+                imageCaption: "Film Festival Opening Night",
+                body: `
+                    <p>Over 4,000 films from 120 countries will screen. This year's theme focuses on migration and identity.</p>
+                    <p>The festival runs for ten days and will feature premieres from both established and first-time directors.</p>
+                `
+            },
+            wildcats: {
+                title: "Underdogs Stun Champions in Overtime Thriller",
+                author: "By Tom Bradley",
+                date: "October 23, 2025 · 4 min read",
+                image: "fas fa-football-ball",
+                imageCaption: "Game-Winning Moment",
+                body: `
+                    <p>The Wildcats defeated the defending champions 34-31 in a game that saw four lead changes in the final quarter.</p>
+                    <p>The winning field goal came as time expired in overtime, sending the home crowd into a frenzy.</p>
+                `
+            },
+            tennis: {
+                title: "Tennis Star Announces Retirement",
+                author: "By Elena Petrova",
+                date: "October 23, 2025 · 3 min read",
+                image: "fas fa-table-tennis",
+                imageCaption: "Farewell to a Legend",
+                body: `
+                    <p>After 18 Grand Slam titles, Maria Sanchez calls it a career, citing family and health.</p>
+                    <p>"I gave everything to this sport," she said. "Now I want to give everything to my family."</p>
+                `
+            }
+        };
+
+        // =============================================
+        // ⚙️ Logic: read ?id= from URL and render article
+        // =============================================
+        function getArticleId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        function renderArticle() {
+            const container = document.getElementById('articleContainer');
+            const id = getArticleId();
+            const article = articles[id];
+
+            // If no id or invalid id → show 404
+            if (!article) {
+                container.innerHTML = `
+                    <div class="not-found">
+                        <i class="fas fa-newspaper"></i>
+                        <h1>Article Not Found</h1>
+                        <p>Sorry, the story you're looking for doesn't exist.</p>
+                        <a href="index.html"><i class="fas fa-arrow-left"></i> Back to Front Page</a>
+                    </div>
+                `;
+                return;
+            }
+
+            // Update page title
+            document.title = article.title + " | The Daily Chronicle";
+
+            // Build the HTML
+            container.innerHTML = `
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Front Page</a>
+                <h1>${article.title}</h1>
+                <div class="meta">
+                    <span class="author">${article.author}</span>
+                    <span>${article.date}</span>
+                </div>
+                <div class="image-placeholder">
+                    <i class="${article.image}"></i> ${article.imageCaption}
+                </div>
+                ${article.body}
+                <div class="footer-note">
+                    <i class="far fa-copyright"></i> 2025 The Daily Chronicle · All rights reserved
+                </div>
+            `;
+        }
+
+        // Run when page loads
+        renderArticle();
+    </script>
+</body>
+</html>
